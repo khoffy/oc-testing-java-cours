@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="049d069d-46c9-4a46-9445-db9d1a45b702" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/openclassrooms/testing/LoggingExtension.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/openclassrooms/testing/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/openclassrooms/testing/CalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/log4j2.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,9 +66,9 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2atGjlnbPuMj9dUww63U4f5Pjgu" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -79,16 +82,18 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.CalculatorTest.add_shouldReturnTheSum_ofMultipleIntegers.executor": "Run",
-    "JUnit.CalculatorTest.executor": "Coverage",
+    "JUnit.CalculatorTest.executor": "Run",
     "JUnit.CalculatorTest.listDigits_shouldReturnsTheListOfDigits_ofPositiveIntegers.executor": "Run",
     "JUnit.CalculatorTest.longCalcul_shouldComputeInLessThan1Second.executor": "Run",
     "JUnit.CalculatorTest.longComputation_shouldComputeInLessThan1Second.executor": "Run",
+    "JUnit.CalculatorTest.multiply_shouldReturnZero_ofZeroWithMultipleIntegers.executor": "Run",
     "JUnit.CalculatorTest.testAddTwoPositiveNumbers.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "p1ch6",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -151,7 +156,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorTest.longComputation_shouldComputeInLessThan1Second" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculatorTest.multiply_shouldReturnZero_ofZeroWithMultipleIntegers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="calculator" />
       <extension name="coverage">
         <pattern>
@@ -161,7 +166,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.openclassrooms.testing" />
       <option name="MAIN_CLASS_NAME" value="com.openclassrooms.testing.CalculatorTest" />
-      <option name="METHOD_NAME" value="longComputation_shouldComputeInLessThan1Second" />
+      <option name="METHOD_NAME" value="multiply_shouldReturnZero_ofZeroWithMultipleIntegers(int)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -199,10 +204,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CalculatorTest" />
+        <item itemvalue="JUnit.CalculatorTest.multiply_shouldReturnZero_ofZeroWithMultipleIntegers" />
         <item itemvalue="JUnit.CalculatorTest.longCalcul_shouldComputeInLessThan1Second" />
         <item itemvalue="JUnit.CalculatorTest.listDigits_shouldReturnsTheListOfDigits_ofPositiveIntegers" />
         <item itemvalue="JUnit.CalculatorTest.testAddTwoPositiveNumbers" />
-        <item itemvalue="JUnit.CalculatorTest.longComputation_shouldComputeInLessThan1Second" />
       </list>
     </recent_temporary>
   </component>
@@ -223,6 +228,7 @@
       <option name="presentableId" value="Default" />
       <updated>1705130598519</updated>
       <workItem from="1705130599624" duration="18649000" />
+      <workItem from="1705164279911" duration="4043000" />
     </task>
     <servers />
   </component>
