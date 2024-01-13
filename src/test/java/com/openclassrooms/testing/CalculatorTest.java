@@ -22,25 +22,25 @@ public class CalculatorTest {
 	private Calculator calculatorUnderTest;
 
 	@BeforeEach
-	public void initCalculator() {
+	void initCalculator() {
 		System.out.println("Appel avant chaque test");
 		calculatorUnderTest = new Calculator();
 	}
 
 	@AfterEach
-	public void undefCalculator() {
+	void undefCalculator() {
 		System.out.println("Appel après chaque test");
 		calculatorUnderTest = null;
 	}
 
 	@BeforeAll
-	public static void initStartingTime() {
+	static void initStartingTime() {
 		System.out.println("Appel avant tous les tests");
 		startedAt = Instant.now();
 	}
 
 	@AfterAll
-	public static void showTestDuration() {
+	static void showTestDuration() {
 		System.out.println("Appel après tous les tests");
 		Instant endedAt = Instant.now();
 		long duration = Duration.between(startedAt, endedAt).toMillis();
@@ -48,7 +48,7 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void testAddTwoPositiveNumbers() {
+	void testAddTwoPositiveNumbers() {
 		// Arrange
 		int a = 2;
 		int b = 3;
@@ -62,7 +62,7 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void multiply_shouldReturnTheProduct_ofTwoIntegers() {
+	void multiply_shouldReturnTheProduct_ofTwoIntegers() {
 		// Arrange
 		int a = 42;
 		int b = 11;
@@ -76,7 +76,7 @@ public class CalculatorTest {
 
 	@ParameterizedTest(name = "{0} x 0 doit être égal à 0")
 	@ValueSource(ints = { 1, 2, 42, 1011, 5089 })
-	public void multiply_shouldReturnZero_ofZeroWithMultipleIntegers(int arg) {
+	void multiply_shouldReturnZero_ofZeroWithMultipleIntegers(int arg) {
 		// Arrange -- Tout est prêt !
 
 		// Act -- Multiplier par zéro
@@ -88,7 +88,7 @@ public class CalculatorTest {
 
 	@ParameterizedTest(name = "{0} + {1} doit être égal à {2}")
 	@CsvSource({ "1,1,2", "2,3,5", "42,57,99" })
-	public void add_shouldReturnTheSum_ofMultipleIntegers(int arg1, int arg2, int expectResult) {
+	void add_shouldReturnTheSum_ofMultipleIntegers(int arg1, int arg2, int expectResult) {
 		// Arrange -- Tout est prêt !
 
 		// Act
@@ -100,7 +100,7 @@ public class CalculatorTest {
 
 	@Timeout(1)
 	@Test
-	public void longCalcul_shouldComputeInLessThan1Second() {
+	void longCalcul_shouldComputeInLessThan1Second() {
 		// Arrange
 
 		// Act
@@ -111,7 +111,7 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void listDigits_shouldReturnsTheListOfDigits_ofPositiveInteger() {
+	void listDigits_shouldReturnsTheListOfDigits_ofPositiveInteger() {
 		// GIVEN
 		int number = 95897;
 
@@ -125,14 +125,14 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void listDigits_shouldReturnsTheListOfDigits_ofNegativeInteger() {
+	void listDigits_shouldReturnsTheListOfDigits_ofNegativeInteger() {
 		int number = -124432;
 		Set<Integer> actualDigits = calculatorUnderTest.digitsSet(number);
 		assertThat(actualDigits).containsExactlyInAnyOrder(1, 2, 3, 4);
 	}
 
 	@Test
-	public void listDigits_shouldReturnsTheListOfZero_ofZero() {
+	void listDigits_shouldReturnsTheListOfZero_ofZero() {
 		int number = 0;
 		Set<Integer> actualDigits = calculatorUnderTest.digitsSet(number);
 		assertThat(actualDigits).containsExactly(0);
