@@ -1,6 +1,8 @@
 package com.openclassrooms.testing;
 
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -15,39 +17,46 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@ExtendWith(LoggingExtension.class)
 public class CalculatorTest {
 
 	private static Instant startedAt;
 
 	private Calculator calculatorUnderTest;
 
+	private static Logger logger;
+
+	public void setLogger(Logger logger) {
+		CalculatorTest.logger = logger;
+	}
 	@BeforeEach
 	void initCalculator() {
-		System.out.println("Appel avant chaque test");
+		logger.info("Appel avant chaque test");
 		calculatorUnderTest = new Calculator();
 	}
 
 	@AfterEach
 	void undefCalculator() {
-		System.out.println("Appel après chaque test");
+		logger.info("Appel après chaque test");
 		calculatorUnderTest = null;
 	}
 
 	@BeforeAll
 	static void initStartingTime() {
-		System.out.println("Appel avant tous les tests");
+		logger.info("Appel avant tous les tests");
 		startedAt = Instant.now();
 	}
 
 	@AfterAll
 	static void showTestDuration() {
-		System.out.println("Appel après tous les tests");
+		logger.info("Appel après tous les tests");
 		Instant endedAt = Instant.now();
 		long duration = Duration.between(startedAt, endedAt).toMillis();
-		System.out.println(MessageFormat.format("Durée des tests : {0} ms", duration));
+		logger.info(MessageFormat.format("Durée des tests : {0} ms", duration));
 	}
 
 	@Test
+	@Tag("FourOperations") // This test is among 4 basis operations tests
 	void testAddTwoPositiveNumbers() {
 		// Arrange
 		int a = 2;
@@ -62,6 +71,7 @@ public class CalculatorTest {
 	}
 
 	@Test
+	@Tag("FourOperations")
 	void multiply_shouldReturnTheProduct_ofTwoIntegers() {
 		// Arrange
 		int a = 42;
